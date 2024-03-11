@@ -2,7 +2,6 @@ package com.bmr.bancamifelrequirement.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
