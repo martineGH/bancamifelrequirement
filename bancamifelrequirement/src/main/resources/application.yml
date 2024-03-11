@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: "http://127.0.0.1:9000"
+      client:
+        registration:
+          mifel-client:
+            provider: spring
+            client-id: mifel-client
+            client-secret: mIf3L
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/authorized"
+            scope:
+              - openid
+              - profile
+              - read
+            client-name: mifel-client
+        provider:
+          spring:
+            issuer-uri: "http://127.0.0.1:9000"

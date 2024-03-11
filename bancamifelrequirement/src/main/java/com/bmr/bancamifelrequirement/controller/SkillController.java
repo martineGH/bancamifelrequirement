@@ -1,9 +1,12 @@
 package com.bmr.bancamifelrequirement.controller;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bmr.bancamifelrequirement.dao.SkillRepository;
@@ -33,5 +36,10 @@ public class SkillController {
   @GetMapping("/api/getSkills/{name}")
   public List<Skill> getSkillsByName(@PathVariable String name){
     return skillRepository.findByName(name);
+  }
+
+  @GetMapping("/authorized")
+  public Map<String, String> authorized(@RequestParam String code){
+    return Collections.singletonMap("code", code);
   }
 }
